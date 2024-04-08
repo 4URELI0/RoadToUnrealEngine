@@ -11,8 +11,7 @@ int main()
   double mayor = 16.3456;
   //Se solo un caracter
   char letra = 'a';
-
-  
-  cout<<letra;
+  bool booleano = true;
+  cout<<mayor;
   return 0;
 }
