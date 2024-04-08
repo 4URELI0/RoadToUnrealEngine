@@ -5,6 +5,7 @@ using namespace std;
 
 int main()
 {
+  //Este mensaje es por que no me aparece los cambios subidos en github
   //Es un numero completo, no lleva coma 
   int entero = 15;
   float flotante = 10.45; 
