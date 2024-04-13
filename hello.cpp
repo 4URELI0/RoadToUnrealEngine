@@ -1,36 +1,26 @@
-/* La sentencia Switch
- switch(expresion){
-  case 1:
-  intrucciones
-  break;
-  case2:
-  intrucciones
-  break;
-  case 3:
-  intrucciones
-  break;
-  default:
-  intrucciones poir defecto
-  break;
- }
+/*
+Escribe un programa que lea tres numeros y determine cual de ellos es mayor
 */
 #include <iostream>
 //#include<math.h>
 using namespace std;
 
 int main(){
-  int numero;
-  cout<<"Escribe un numero entre 1 y 5: ";cin>>numero;
+  int numero1, numero2, numero3;
+  cout<<"Escribe dos numeros:"; cin>>numero1>>numero2>>numero3;
 
-  switch (numero)
+  if (numero1 && numero2 < numero3)
   {
-  case 1:cout<<"El numero es 1";break;
-  case 2:cout<<"El numero es 2"; break;
-  case 3: cout<<"El numeroe es 3";break;
-  case 4: cout<<"El numero es 4";break;
-  case 5:cout<<"El numero es 5";break;
-  default:cout<<"El numero esta fuera de rango que se solicita";break;
+    cout<<"El numero mayor es: "<<numero3;
+  }else if (numero1 && numero3 < numero2)
+  {
+    cout<<"El numero mayor es: "<<numero2;
+  }else
+  {
+    cout<<"El numero mayor es: "<<numero1;
   }
+  
+  
   
   return 0;
 }
