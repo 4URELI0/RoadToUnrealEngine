@@ -1,18 +1,17 @@
 /*
-Escriba un programa que lea de la entrada los dos cateto de un triangulo rectangulo y escriba
-de la salida estandar su hipotenusa
+Realize un programa que calcule el valor que toma la siguiente funcion para uno de los valores
+dados de x e y
 */
 #include <iostream>
 #include<math.h>
 using namespace std;
 
 int main(){
-  float catetoA, catetoB, hipotenusa = 0;
-  cout<<"Escriba el valor del cateto A: ";cin>>catetoA;
-  cout<<"Escriba el valor del cateto B: ";cin>>catetoB;
-  
-  hipotenusa = sqrt(pow(catetoA,2) + pow(catetoB,2));
-  cout<<"\n El valor de la hipotenusa es: "<<hipotenusa;
-
+  float x,y,resultado = 0;
+  cout<<"Escribe el valor de X: "; cin>>x;
+  cout<<"Escribe el valor de Y: "; cin>>y;
+  resultado = (sqrt(x)) / (pow(y,2) - 1);
+  cout.precision(3);
+  cout<<"\nEl resultado es: "<<resultado;
   return 0;
 }
