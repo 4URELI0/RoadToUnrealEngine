@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
   /*Declaramos las variables*/
-  float a,b,c,d,e,f;
+  float a,b,c,d;
   float resultado = 0;//Almacenara el valor del resultado
   
   /*El usuario va a ingresar los valores*/
@@ -12,10 +12,8 @@ int main(){
   cout<<"Escribe el valor B: "; cin>> b;
   cout<<"Escribe el valor C: "; cin>> c;
   cout<<"Escribe el valor D: "; cin>> d;
-  cout<<"Escribe el valor E: "; cin>> e;
-  cout<<"Escribe el valor F: "; cin>> f;
   /*Operacion que debe realizar el programa*/
-  resultado = (a + (b/c)) / (d + (e/f));
+  resultado = a + (b / (c-d));
   /*Nos ayduara a reducir la cantidad de numero al obtener el resultado osea lo va a redondear*/
   cout.precision(3);
   cout<<"\nEl resultado es: "<<resultado<<endl;
