@@ -1,22 +1,19 @@
-/*Escribre la siguiente expresiones como expresiones en c++*/
+/*Escribe un fragmento de programa que intercambie los valores entre dos variables*/
 #include <iostream>
 using namespace std;
 
 int main(){
-  /*Declaramos las variables*/
-  float a,b,c,d;
-  float resultado = 0;//Almacenara el valor del resultado
+  int x,y,aux;
+  cout<<"Escribe el valor de X: "; cin>>x;
+  cout<<"Escribe el valor de Y: "; cin>>y;
+
+  aux = x;//Auxiliar guarde el valor de X osea auxiliar va a valer X
+  x = y;//X va a guardar el valor de Y 
+  y = aux;//Y va a guarda el valor X
   
-  /*El usuario va a ingresar los valores*/
-  cout<<"Escribe el valor A: "; cin>> a;
-  cout<<"Escribe el valor B: "; cin>> b;
-  cout<<"Escribe el valor C: "; cin>> c;
-  cout<<"Escribe el valor D: "; cin>> d;
-  /*Operacion que debe realizar el programa*/
-  resultado = a + (b / (c-d));
-  /*Nos ayduara a reducir la cantidad de numero al obtener el resultado osea lo va a redondear*/
-  cout.precision(3);
-  cout<<"\nEl resultado es: "<<resultado<<endl;
-  
+  cout<<"\n El nuevo valor de X es: "<<x<<endl;
+  cout<<"\n El nuevo valor de Y es: "<<y<<endl;
+
+
   return 0;
 }
