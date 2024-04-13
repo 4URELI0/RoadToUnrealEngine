@@ -1,28 +1,18 @@
-/*Realize un programa que lea de la entrada estandar los siguiente datos de una persona
-edad: dato de tipo entero
-genero: dato de tipo caracter
-altura en metros: datos de tipo real
-Tras mostrar los datos, el programa debe mostrarlos en la salida estandar*/
+/*Escribre la siguiente expresiones como expresiones en c++*/
 #include <iostream>
 using namespace std;
 
 int main(){
-  string nombre;
-  int edad;
-  char genero[10];
-  float altura;
+  float a,b,c,d;
+  float resultado = 0;
+  cout<<"Escribe el valor de A: ";cin>>a;
+  cout<<"Escribe el valor de B: ";cin>>b;
+  cout<<"Escribe el valor de C: ";cin>>c;
+  cout<<"Escribe el valor de D: ";cin>>d;
 
-  cout<<"Como te llamas?: "; 
-  cin>>nombre;
-  cout<<"Ingresa tu edad: "; 
-  cin>>edad;
-  cout<<"Ingresa tu genero: "; 
-  cin>>genero;
-  cout<<"Ingresa tu altura: "; 
-  cin>>altura;
+  resultado = (a+b) / (c+d);
+  cout.precision(3);
+  cout<<"El resultado es: " <<resultado;
 
-  cout<<"\nNombre y apellido: "<<nombre<<endl;
-  cout<<"\nEdad: "<<edad<<endl;
-  cout<<"\nGenero: "<<genero<<endl;
-  cout<<"\nAltura: "<<altura<<"m"<<endl;
+  return 0;
 }
