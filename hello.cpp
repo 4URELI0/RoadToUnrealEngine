@@ -1,30 +1,28 @@
-/*Escribre un programa que lea de la entrada de la terminal dos numero y muestre en la salida 
-de terminal su suma, resta, multiplicacion y division*/
-
-#include<iostream>
+/*Realize un programa que lea de la entrada estandar los siguiente datos de una persona
+edad: dato de tipo entero
+genero: dato de tipo caracter
+altura en metros: datos de tipo real
+Tras mostrar los datos, el programa debe mostrarlos en la salida estandar*/
+#include <iostream>
 using namespace std;
 
 int main(){
-  int numero1;
-  int numero2;
-  int suma = 0;
-  int resta = 0;
-  int multiplicacion = 0;
-  int division = 0;
+  string nombre;
+  int edad;
+  char genero[10];
+  float altura;
 
-  cout<<"Escribre un numero: ";
-  cin>> numero1;
-  cout<<"Escribre otro numero: ";
-  cin>>numero2;
+  cout<<"Como te llamas?: "; 
+  cin>>nombre;
+  cout<<"Ingresa tu edad: "; 
+  cin>>edad;
+  cout<<"Ingresa tu genero: "; 
+  cin>>genero;
+  cout<<"Ingresa tu altura: "; 
+  cin>>altura;
 
-  suma = numero1 + numero2;
-  resta = numero1 - numero2;
-  multiplicacion = numero1 * numero2;
-  division = numero1 / numero2;
-
-  cout<<"\nLa suma es: " << suma<<endl;
-  cout<<"\nLa resta es: " << resta<<endl;
-  cout<<"\nLa multiplicacion es: " << multiplicacion<<endl;
-  cout<<"\nLa division es: " << division<<endl;
-  return 0;
+  cout<<"\nNombre y apellido: "<<nombre<<endl;
+  cout<<"\nEdad: "<<edad<<endl;
+  cout<<"\nGenero: "<<genero<<endl;
+  cout<<"\nAltura: "<<altura<<"m"<<endl;
 }
