@@ -6,17 +6,19 @@ Realice un programa que lea un valor entero  determine si se trata de un numero 
 using namespace std;
 
 int main(){
-  int numeroIngresado, resultado = 0;
-  cout<<"Ingrese un numero : ";cin>>numeroIngresado;
-  resultado = numeroIngresado % 2;
-  if (resultado == 0)
+  int numeroIngresado;
+
+  cout<<"Ingrese un numero negativo o positivo: ";cin>>numeroIngresado;
+
+  if (numeroIngresado == 0)
   {
-    cout<<"El numero es par";
-  }
-  else
+    cout<<"El numero es cero";
+  }else if (numeroIngresado < 0)
   {
-    cout<<"El numero es impar";
+    cout<<"El numero "<<numeroIngresado<<" es negativo";
+  }else if(numeroIngresado > 0)
+  {
+    cout<<"El numero "<<numeroIngresado<<" es positivo";
   }
-   
   return 0;
 }
