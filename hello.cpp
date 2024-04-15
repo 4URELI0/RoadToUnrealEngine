@@ -1,26 +1,22 @@
 /*
-Escribe un programa que lea tres numeros y determine cual de ellos es mayor
+Realice un programa que lea un valor entero  determine si se trata de un numero impar o impar
 */
 #include <iostream>
 //#include<math.h>
 using namespace std;
 
 int main(){
-  int numero1, numero2, numero3;
-  cout<<"Escribe dos numeros:"; cin>>numero1>>numero2>>numero3;
-
-  if (numero1 && numero2 < numero3)
+  int numeroIngresado, resultado = 0;
+  cout<<"Ingrese un numero : ";cin>>numeroIngresado;
+  resultado = numeroIngresado % 2;
+  if (resultado == 0)
   {
-    cout<<"El numero mayor es: "<<numero3;
-  }else if (numero1 && numero3 < numero2)
-  {
-    cout<<"El numero mayor es: "<<numero2;
-  }else
-  {
-    cout<<"El numero mayor es: "<<numero1;
+    cout<<"El numero es par";
   }
-  
-  
-  
+  else
+  {
+    cout<<"El numero es impar";
+  }
+   
   return 0;
 }
