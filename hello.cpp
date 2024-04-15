@@ -1,24 +1,27 @@
 /*
-Realice un programa que lea un valor entero  determine si se trata de un numero impar o impar
+Escriba un programa que lea la entrada de un caracter e indique 
+en la salida estandar si el caracter es una vocal minuscula o mayuscula
 */
 #include <iostream>
 //#include<math.h>
 using namespace std;
 
 int main(){
-  int numeroIngresado;
-
-  cout<<"Ingrese un numero negativo o positivo: ";cin>>numeroIngresado;
-
-  if (numeroIngresado == 0)
+  char letra;
+  cout<<"Escribe un caracter: ";cin>>letra;
+  
+  switch (letra)
   {
-    cout<<"El numero es cero";
-  }else if (numeroIngresado < 0)
-  {
-    cout<<"El numero "<<numeroIngresado<<" es negativo";
-  }else if(numeroIngresado > 0)
-  {
-    cout<<"El numero "<<numeroIngresado<<" es positivo";
+  case 'a':
+  case 'e':
+  case 'i':
+  case 'o':
+  case 'u':
+  cout<<"Es una vocal minuscula";
+  break;
+  default:
+  cout<<"No es una vocal minuscula";
+  break;
   }
   return 0;
 }
