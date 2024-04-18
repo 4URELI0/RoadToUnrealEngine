@@ -1,6 +1,7 @@
 /*
-Escriba un programa que lea la entrada de un caracter e indique 
-en la salida estandar si el caracter es una vocal minuscula o mayuscula
+Escriba un programa que lea de la entrada estandar un caracter 
+e indique en la salida estandar
+ si el caracter es una vocal minuscula o no es una vocal
 */
 #include <iostream>
 //#include<math.h>
@@ -22,6 +23,18 @@ int main(){
   default:
   cout<<"No es una vocal minuscula";
   break;
+  }
+  switch (letra)
+  {
+  case 'A':
+  case 'E':
+  case 'I':
+  case 'O':
+  case 'U':
+  cout<<"Es una vocal mayuscula";
+  break;
+  default:
+  cout<<"No es una vocal mayuscula";
   }
   return 0;
 }
