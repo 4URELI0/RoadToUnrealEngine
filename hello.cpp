@@ -1,45 +1,45 @@
-/*Hacer un programa que simule un cajero automatico con un saldo inicial de 1k USD*/
+/*Hacer un menu que considere las siguientes opciones:
+caso1: cubo de un numero
+caso2: numero par o impar
+caso2: salir de la opciones
+*/
 
 #include <iostream>
+#include <math.h>
 using namespace std;
 
 int main()
 {
-  int saldoInicial = 1000, opcion;
-  float extra, saldoActual = 0, retiro;
-  /*Va a dejar espacio en la linea el "\t"*/
-  cout << "\tBienvenido a su cajero virtual" << endl;
-  cout << "1. Ingresar dinero en cuenta" << endl;
-  cout << "2. Retirar dinero de la cuenta" << endl;
-  cout << "3. Salir del cajero" << endl;
-  cout << "Opciones: ";
-  /*La opcion que ponga el usuario de valor lo va a iniciar*/
+  int opcion, numero;
+  float cuboNumero;
+  cout << "Bienvenido al menu de juegos numericos" << endl;
+  cout << "1.Cubo de un numero" << endl;
+  cout << "2.Numero par o impar" << endl;
+  cout << "3.Salir" << endl;
+  cout << "Elija un numero el numero que desee en las opciones: ";
   cin >> opcion;
 
   switch (opcion)
   {
   case 1:
-    cout << "Ingrese la cantidad de dinero que quiere ingresar: ";
-    cin >> extra;
-    saldoActual = extra + saldoInicial;
-    cout << "Dinero en su cuenta: " << saldoActual;
+    cout << "Ingrese un valor para saber su resultado al cubo: ";
+    cin >> numero;
+    cuboNumero = pow(numero, 3);
+    cout << "El valor del su numero al cubo es: " << cuboNumero;
     break;
   case 2:
-    cout << "Escribe cuanto dinero quiere retirar: ";
-    cin >> retiro;
-    if (retiro > saldoInicial)
+    cout << "Ingrese un valor para determinar si es par o impar: ";
+    cin >> numero;
+    if (numero % 2 == 0)
     {
-      cout << "Su cuenta no tiene fondo suficientes para retirar el dinero deseado";
+      cout << "El numero " << numero << " es par";
     }
     else
     {
-      saldoActual = saldoInicial - retiro;
-      cout << "Cantidad de dinero retirado: " << retiro << "$" << endl;
-      cout << "Dinero actual de la cuenta: " << saldoActual << "$" << endl;
+      cout << "El numero " << numero << " es impar";
     }
     break;
   case 3:
-    cout << "Gracias por confiar en nosotros, hasta luego.";
     break;
   }
   return 0;
