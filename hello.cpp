@@ -1,20 +1,58 @@
-/*Escribe un programa que lea de las entradas estandar tres numeros. Despues debe leer un cuerto numero 
-e indicar si el numero coincide con algunos de los introducido con anterioridad*/
+/*Cambiar un numero entero con el mismo valor pero en romanos*/
 
  #include<iostream>
  using namespace std;
 
  int main(){
-   int numero1,numero2,numero3,numero4;
-   cout<<"Ingrese 3 valores: ";cin>>numero1>>numero2>>numero3;
-   cout<<"Ingrese el 4to valor: ";cin>>numero4;
-   if ((numero1 == numero4) || (numero2 == numero4) || (numero3 == numero4))
-   {
-    cout<<"Un numero concide con el 4to numero ingresado"<<endl;
-   }else
-   {
-    cout<<"El cuarto numero no coincide con ninguno de los anteriores ingresado";
-   }
-   
-   return 0;
+  int numero,unidades,decenas,centenas, millar;
+  cout<<"Escribe un numero: ";cin>>numero;
+
+  unidades = numero % 10; numero /= 10;//unidades = 2, numero = 1252
+  decenas = numero % 10; numero /= 10;//decenas = 5, numero = 21
+  centenas = numero % 10; numero /= 10;//centenas = 1, numero 2
+  millar = numero % 10; numero /= 10;//millar = 2, numero = 0
+
+  switch (millar)
+  {
+  case 1: cout<<"M"; break;
+  case 2: cout<<"MM";break;
+  case 3: cout<<"MM";break;
+  }
+  switch (centenas)
+  {
+  case 1: cout<<"C"; break;
+  case 2: cout<<"CC";break;
+  case 3: cout<<"CCC";break;
+  case 4: cout<<"CD";break;
+  case 5: cout<<"D";break;
+  case 6: cout<<"DC";break;
+  case 7: cout<<"DCC";break;
+  case 8: cout<<"DCCC";break;
+  case 9: cout<<"CM";break;
+  }
+  switch (decenas)
+  {
+  case 1: cout<<"X"; break;
+  case 2: cout<<"XX";break;
+  case 3: cout<<"XXX";break;
+  case 4: cout<<"XL";break;
+  case 5: cout<<"L";break;
+  case 6: cout<<"LX";break;
+  case 7: cout<<"LXX";break;
+  case 8: cout<<"LXXX";break;
+  case 9: cout<<"XC";break;
+  }
+  switch (unidades)
+  {
+  case 1: cout<<"I"; break;
+  case 2: cout<<"II";break;
+  case 3: cout<<"III";break;
+  case 4: cout<<"IV";break;
+  case 5: cout<<"V";break;
+  case 6: cout<<"VI";break;
+  case 7: cout<<"VII";break;
+  case 8: cout<<"VIII";break;
+  case 9: cout<<"IX";break;
+  }
+  return 0;
  }
