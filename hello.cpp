@@ -1,40 +1,20 @@
-/*
-Escriba un programa que lea de la entrada estandar un caracter 
-e indique en la salida estandar
- si el caracter es una vocal minuscula o no es una vocal
-*/
-#include <iostream>
-//#include<math.h>
-using namespace std;
+/*Escribe un porgrama que solicite la edad (un entero) e indique en la salida estandar
+ si la edad introducida esta en el rango de [18-25]*/
 
-int main(){
-  char letra;
-  cout<<"Escribe un caracter: ";cin>>letra;
-  
-  switch (letra)
-  {
-  case 'a':
-  case 'e':
-  case 'i':
-  case 'o':
-  case 'u':
-  cout<<"Es una vocal minuscula";
-  break;
-  default:
-  cout<<"No es una vocal minuscula";
-  break;
-  }
-  switch (letra)
-  {
-  case 'A':
-  case 'E':
-  case 'I':
-  case 'O':
-  case 'U':
-  cout<<"Es una vocal mayuscula";
-  break;
-  default:
-  cout<<"No es una vocal mayuscula";
-  }
-  return 0;
-}
+ #include<iostream>
+ using namespace std;
+ int main(){
+   int edad;
+   cout<<"Escribe cuantos anios tienes: ";cin>>edad;
+   
+   /*Si edad es 18,19,20,21,22,23,24,25*/
+   if ((edad >= 18) && (edad <= 25))
+   {
+    cout<<"Su edad esta en el rango de edad de [18 - 25]";
+   }else
+   {
+    cout<<"Su edad no esta en dicho rango";
+   }
+     
+   return 0;
+ }
