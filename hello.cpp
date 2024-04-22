@@ -1,5 +1,5 @@
-/*Realize un programa que solicite de la entrada un entero de 1 al 10 y muestre en la salida estandar su tabla de
-multiplicar*/
+/*Realize un programa que lea de la entrada estandar numeros hasta que se introdusca un 0. En ese momento el programa
+debe terminar y mostrar en la salida estandar el numero de valores mayores que cero leidos*/
 #include <iostream>
 // #include <stdlib.h>
 #include <conio.h>
@@ -8,17 +8,16 @@ using namespace std;
 
 int main()
 {
-  int numero;//Iniciar la variables
-  do
+  int numero;//guardara los datos que usuario ingreso
+  int contador = 0;//contara cuantos numero introdujo el usuario que sean diferente de 0
+  cout << "Ingrese un numero: " << endl;
+  cin >> numero;
+  while (numero > 0)
   {
-    cout << "Por favor escribe un numero entre 1 al 10: ";//Le pregunta al usuario que escriba un numero
+    contador++;
+    cout << "Ingrese otro numero: " << endl;
     cin >> numero;
-  } while ((numero < 1) || (numero > 10));//Le va a seguir pidiendo al usuario que el numero debe ser entre 1 al 10,
-                                          //Si es menor que 1 va a volver a preguntar, si es mayor que 10 tambien va a volver a serlo 
-  for (int i = 1; i <= 20; i++)
-  {
-    cout << numero << " x " << i << " = " << numero * i << endl;
   }
-
+  cout << "Los valores ingresado mayores a 0 son: " << contador << endl;
   return 0;
 }
