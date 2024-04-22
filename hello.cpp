@@ -1,25 +1,21 @@
-/*La sentencia do while()
-do{
-conjunto de expresiones
-}while(expresion logica)
-nota: el do while primero actua y luego piensa.
-el while primero piensa y luego actua
-}*/
+/*La sentencia for
+for(expr1; expresion logica; expr2){
+  conjunto de intrucciones
+}
+*/
 #include <iostream>
-#include<stdlib.h>
-//#include <conio.h>
+// #include <stdlib.h>
+#include <conio.h>
 // #include <math.h>
 using namespace std;
 
 int main()
 {
   int i;
-  i = 10;
-  do
+  for (i = 10; i >= 1; i--)
   {
     cout << i << endl;
-    i--; // Decrementa el iterador en 1 en 1
-  } while (i >= 1);
-  system("pause");
+  }
+  getch();
   return 0;
 }
