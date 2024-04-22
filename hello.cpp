@@ -1,8 +1,5 @@
-/*La sentencia for
-for(expr1; expresion logica; expr2){
-  conjunto de intrucciones
-}
-*/
+/*Realize un programa que solicite de la entrada un entero de 1 al 10 y muestre en la salida estandar su tabla de
+multiplicar*/
 #include <iostream>
 // #include <stdlib.h>
 #include <conio.h>
@@ -11,11 +8,17 @@ using namespace std;
 
 int main()
 {
-  int i;
-  for (i = 10; i >= 1; i--)
+  int numero;//Iniciar la variables
+  do
   {
-    cout << i << endl;
+    cout << "Por favor escribe un numero entre 1 al 10: ";//Le pregunta al usuario que escriba un numero
+    cin >> numero;
+  } while ((numero < 1) || (numero > 10));//Le va a seguir pidiendo al usuario que el numero debe ser entre 1 al 10,
+                                          //Si es menor que 1 va a volver a preguntar, si es mayor que 10 tambien va a volver a serlo 
+  for (int i = 1; i <= 20; i++)
+  {
+    cout << numero << " x " << i << " = " << numero * i << endl;
   }
-  getch();
+
   return 0;
 }
