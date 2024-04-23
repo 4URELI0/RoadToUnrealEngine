@@ -1,4 +1,4 @@
-/*Escribe un programa que calcule el valor de 1+3+5+...+2n-1*/
+/*Escribir un programa que calcule el factorial de: 1*2*3*4*...*n(factorial)*/
 #include <iostream>
 // #include <stdlib.h>
 #include <conio.h>
@@ -7,13 +7,13 @@ using namespace std;
 
 int main()
 {
-  int n, suma = 0;
-  cout << "Escribe el numero de elementos: ";
-  cin >> n;
-  for (int i = 1; i <= n; i++)
+  int numero, factorial = 1;
+  cout << "Escribe un numero: ";
+  cin >> numero;
+  for (int i = 1; i <= numero; i++)
   {
-    suma *=  2*n-1;
+    factorial = factorial * i;
   }
-  cout << "El resultado del valor es: " << suma << endl;
+  cout << "El factorial del numero es: " << factorial;
   return 0;
 }
