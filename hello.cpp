@@ -1,5 +1,5 @@
-/*Realize un programa que calcule y muestre en la salida estandar la suma de los cuadrados de los 10 primeros enteros
-mayores que cero*/
+/*Escriba un programa que lea valores enteros hasta que se introdusca un valor en el rango [20-30]
+o se introduzca el valor 0. El programa debe entregar la suma de los valores mayores a 0 introducidos */
 #include <iostream>
 // #include <stdlib.h>
 #include <conio.h>
@@ -8,15 +8,16 @@ using namespace std;
 
 int main()
 {
-  int suma = 0;
-  int cuadrado;
-
-  for (int i = 1; i <= 10; i++)
+  int numero, suma = 0;
+  do
   {
-    cuadrado = i * i;
-    suma += cuadrado; // suma = suma + cuadrado
-  }
-  cout << "El resultado de la suma es: " << suma << endl;
-  getch();
+    cout << "Digite un numero: ";
+    cin >> numero;
+    if (numero > 0)
+    {
+      suma += numero;
+    }
+  } while ((numero < 20) || (numero > 30) && (numero != 0));
+  cout << "\nLa suma es: " << suma << endl;
   return 0;
 }
