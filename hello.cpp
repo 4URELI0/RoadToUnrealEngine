@@ -1,4 +1,4 @@
-/*escriba un programa que calcule el valor de 1 + 2 + 3 + .... + n*/
+/*Escribe un programa que calcule el valor de 1+3+5+...+2n-1*/
 #include <iostream>
 // #include <stdlib.h>
 #include <conio.h>
@@ -12,8 +12,8 @@ int main()
   cin >> n;
   for (int i = 1; i <= n; i++)
   {
-    suma = suma + i;
+    suma *=  2*n-1;
   }
-  cout << "La suma es: " << suma << endl;
+  cout << "El resultado del valor es: " << suma << endl;
   return 0;
 }
