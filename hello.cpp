@@ -1,21 +1,20 @@
-/*Escriba un programa que calcule el valor de: 2 elevada 1 + 2 elevado 2 + ... + 2 elevado n*/
+/*Hacer un programa que calcule el resultado de la siguiente expresion  1-2+3-4+5-6....n*/
 #include <iostream>
 #include <stdlib.h>
 // #include <conio.h>
-#include <math.h>
+// #include <math.h>
 using namespace std;
 
 int main()
 {
-  int suma = 0, elevacion = 0, n;
-  cout << "Digite el numero de elemento a sumar: ";
+  int suma = 0, n, signo = 1;
+  cout << "Digite el valor de n: ";
   cin >> n;
-  for (int i = 1; i <= n; i++)
+  for (int i = 0; i <= n; i++)
   {
-    elevacion = pow(2, i);
-    suma += elevacion;
+    signo *= -1;
+    suma = suma + (i * signo);
   }
-  cout << "\nLa suma total es: " << suma << endl;
-  system("pause");
+  cout << "El resultado es: " << suma;
   return 0;
 }
