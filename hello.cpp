@@ -1,19 +1,21 @@
-/*Escribir un programa que calcule el factorial de: 1*2*3*4*...*n(factorial)*/
+/*Escriba un programa que calcule el valor de: 2 elevada 1 + 2 elevado 2 + ... + 2 elevado n*/
 #include <iostream>
-// #include <stdlib.h>
-#include <conio.h>
-// #include <math.h>
+#include <stdlib.h>
+// #include <conio.h>
+#include <math.h>
 using namespace std;
 
 int main()
 {
-  int numero, factorial = 1;
-  cout << "Escribe un numero: ";
-  cin >> numero;
-  for (int i = 1; i <= numero; i++)
+  int suma = 0, elevacion = 0, n;
+  cout << "Digite el numero de elemento a sumar: ";
+  cin >> n;
+  for (int i = 1; i <= n; i++)
   {
-    factorial = factorial * i;
+    elevacion = pow(2, i);
+    suma += elevacion;
   }
-  cout << "El factorial del numero es: " << factorial;
+  cout << "\nLa suma total es: " << suma << endl;
+  system("pause");
   return 0;
 }
