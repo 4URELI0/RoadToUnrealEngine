@@ -1,43 +1,35 @@
-/*En una clase 5 alumnos han realizado 3 examenes y se requiere determinar el numero de:
-aprobado todos los examenes
-aprobaron al menos un examen
-aprobaron el ultimo examen
-realize un programa que permita la lectura de datos y el calculo de estadistica*/
+/*Realize un programa que solicite al usuario que piense en un numero entero entre el 1-100. El programa
+debe generar un numero aleatorio en ese mismo rango [1-100] e indicarle al usuario si el numero
+que digite es menor o mayor al numero aleatorio, asi hasta que lo adivine, y por ultimo mostrarle el numero
+de intento que llevo*/
 #include <iostream>
 #include <stdlib.h>
+#include <time.h>
 // #include <conio.h>
 // #include <math.h>
 using namespace std;
 
 int main()
 {
-  int alumnos = 5, primerExamen = 0, segundoExamen = 0, tercerExamen = 0, i = 1, aprobarontodas = 0,
-      aprobaronSoloUno = 0, aprobaronUltimoExamen = 0;
-  while (i <= alumnos)
+  int numero, datoRandom, contador = 0;
+  srand(time(NULL)); // Generar un numero aleatorio
+  datoRandom = 1 + rand() % (100);
+  do
   {
-    cout << "Alumno N: " << i << endl;
-    cout << "Nota del 1er examen: ";
-    cin >> primerExamen;
-    cout << "Nota del 2do examen: ";
-    cin >> segundoExamen;
-    cout << "Nota del 3er examen: ";
-    cin >> tercerExamen;
-    if (primerExamen >= 7 && segundoExamen >= 7 && tercerExamen >= 7)
+    cout << "Escribe un numero: ";
+    cin >> numero;
+    if (numero > datoRandom)
     {
-      aprobarontodas++;
+      cout << "\nEscribe un numero menor\n";
     }
-    else if (primerExamen >= 7 || segundoExamen >= 7 || tercerExamen >= 7)
+    if (numero < datoRandom)
     {
-      aprobaronSoloUno++;
+      cout << "\nEscribe un numero mayor\n";
     }
-    else if (primerExamen != 7 && segundoExamen != 7 && tercerExamen >= 7)
-    {
-      aprobaronUltimoExamen++;
-    }
-    i++;
-  }
-  cout << "Alumnos que aprobaron todos los examenes: " << aprobarontodas << endl;
-  cout << "Alumnos que aprobaron solo uno: " << aprobaronSoloUno << endl;
-  cout << "Alumnos que aprobaron el ultimo examen: " << aprobaronUltimoExamen << endl;
+    contador++;
+  } while (numero != datoRandom);
+  cout << "\nFelicidades adivinaste el numero!";
+  cout << "Numero de intentos: " << contador << endl;
+  system("pause");
   return 0;
 }
