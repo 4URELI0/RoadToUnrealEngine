@@ -1,4 +1,8 @@
-/*Hacer un programa que realize la serie fibonacci -> 1 1 2 3 5 8 13 ... n*/
+/*En una clase 5 alumnos han realizado 3 examenes y se requiere determinar el numero de:
+aprobado todos los examenes
+aprobaron al menos un examen
+aprobaron el ultimo examen
+realize un programa que permita la lectura de datos y el calculo de estadistica*/
 #include <iostream>
 #include <stdlib.h>
 // #include <conio.h>
@@ -7,18 +11,33 @@ using namespace std;
 
 int main()
 {
-  int n, x = 0, y = 1, z = 1;
-  cout << "Digite el numero de elemento: ";
-  cin >> n;
-  cout << "1 ";
-  for (int i = 1; i <= n; i++)
+  int alumnos = 5, primerExamen = 0, segundoExamen = 0, tercerExamen = 0, i = 1, aprobarontodas = 0,
+      aprobaronSoloUno = 0, aprobaronUltimoExamen = 0;
+  while (i <= alumnos)
   {
-    z = x + y;       // Al poner x + y, z va a valer 1; La suma que antes era 1, ahora viene con 2 por la suma de la linea 16 y 17 y imprimira 1 2
-    cout << z << " "; // Imprime 1
-    x = y;           // x que valia 0 ahora vale Y(1) y ahora x vale 1
-    y = z;           // z es lo que vale z entonces y vale 1
+    cout << "Alumno N: " << i << endl;
+    cout << "Nota del 1er examen: ";
+    cin >> primerExamen;
+    cout << "Nota del 2do examen: ";
+    cin >> segundoExamen;
+    cout << "Nota del 3er examen: ";
+    cin >> tercerExamen;
+    if (primerExamen >= 7 && segundoExamen >= 7 && tercerExamen >= 7)
+    {
+      aprobarontodas++;
+    }
+    else if (primerExamen >= 7 || segundoExamen >= 7 || tercerExamen >= 7)
+    {
+      aprobaronSoloUno++;
+    }
+    else if (primerExamen != 7 && segundoExamen != 7 && tercerExamen >= 7)
+    {
+      aprobaronUltimoExamen++;
+    }
+    i++;
   }
-  cout << "\n ";
-  system("pause");
+  cout << "Alumnos que aprobaron todos los examenes: " << aprobarontodas << endl;
+  cout << "Alumnos que aprobaron solo uno: " << aprobaronSoloUno << endl;
+  cout << "Alumnos que aprobaron el ultimo examen: " << aprobaronUltimoExamen << endl;
   return 0;
 }
