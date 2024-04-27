@@ -1,5 +1,5 @@
-/*Escribe un programa que defina un vector de numero y calcule la multiplicacion
-acumulada de sus elementos*/
+/*Escribe un programa que lea la entradas un vector de numeros y muestre en la salida
+estandar los numeros del vector con sus indices asociados*/
 #include <iostream>
 // #include <stdlib.h>
 // #include <time.h>
@@ -9,13 +9,19 @@ using namespace std;
 
 int main()
 {
-  int numeros[6] = {4, 5, 6, 7, 8, 5};
-  int multiplicacion = 1;//No la incializamos en 0 por que nos daria como resultado 0
-  for (int i = 0; i < 6; i++)
+  int numeros[100], n;
+  cout << "Escribe el numeros de elementos que va a tener el arreglo: ";
+  cin >> n;
+  for (int i = 0; i < n; i++)
   {
-    multiplicacion *= numeros[i];
+    cout << "Digite un numero: ";
+    cin >> numeros[i]; // Numeros guardado en el vector
   }
-  cout << "El resultado de la multiplicacion acumulada de los elementos es: " << multiplicacion << endl;
+  // Ahora vamos a mostrar los elementos con sus indices asociados
+  for (int i = 0; i < n; i++)
+  {
+    cout << i << "--> " << numeros[i] << endl;
+  }
   getch();
   return 0;
 }
