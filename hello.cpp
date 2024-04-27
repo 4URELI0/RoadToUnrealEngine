@@ -11,11 +11,11 @@ int main()
 {
   int numeros[100], n;
   cout << "Escribe el numeros de elementos que va a tener el arreglo: ";
-  cin >> n;
+  cin >> n;//almacenar el numeros de elementos que va a tener el arreglo
   for (int i = 0; i < n; i++)
   {
     cout << "Digite un numero: ";
-    cin >> numeros[i]; // Numeros guardado en el vector
+    cin >> numeros[i]; // Numeros guardado en el vector, si ingresamos un 5 entonces lo guardara en la posicion 0 y asi lo hara hasta que se cumpla la condicion
   }
   // Ahora vamos a mostrar los elementos con sus indices asociados
   for (int i = 0; i < n; i++)
