@@ -1,27 +1,30 @@
-/*Escribe un programa que lea la entradas un vector de numeros y muestre en la salida
-estandar los numeros del vector con sus indices asociados*/
+/*Escribe un programa que defina un vector de numeros y muestre en la salida estandar
+el vector en orden inverso del ultimo al primero elemento*/
 #include <iostream>
 // #include <stdlib.h>
 // #include <time.h>
 #include <conio.h>
 // #include <math.h>
+#include <algorithm>
 using namespace std;
 
 int main()
 {
-  int numeros[100], n;
-  cout << "Escribe el numeros de elementos que va a tener el arreglo: ";
-  cin >> n;//almacenar el numeros de elementos que va a tener el arreglo
-  for (int i = 0; i < n; i++)
+  int numbers[6];
+  cout << "Introduce los elementos de un array: " << endl;
+  for (int i = 0; i < 5; i++)
   {
-    cout << "Digite un numero: ";
-    cin >> numeros[i]; // Numeros guardado en el vector, si ingresamos un 5 entonces lo guardara en la posicion 0 y asi lo hara hasta que se cumpla la condicion
+    cin >> numbers[i];
   }
-  // Ahora vamos a mostrar los elementos con sus indices asociados
-  for (int i = 0; i < n; i++)
+  cout << "Elementos de un array son: " << endl;
+  for (int i = 0; i < 5; i++)
   {
-    cout << i << "--> " << numeros[i] << endl;
+    cout << numbers[i] << " ";
   }
-  getch();
+  cout << "\nElementos de un array en reversa son: " << endl;
+  for (int i = 5; i > 0; i--)
+  {
+    cout << numbers[i] << " ";
+  }
   return 0;
 }
