@@ -1,5 +1,5 @@
-/*Escriba un programa que defina un vector de numeros y calcule la suma de sus
-elementos*/
+/*Escribe un programa que defina un vector de numero y calcule la multiplicacion
+acumulada de sus elementos*/
 #include <iostream>
 // #include <stdlib.h>
 // #include <time.h>
@@ -9,13 +9,13 @@ using namespace std;
 
 int main()
 {
-  int numero[5] = {1, 2, 3, 4, 5};
-  int suma = 0; // Almacenar la suma de todos los vectores
-  for (int i = 0; i < 5; i++)//en el bucle for la condicion sera menor a 5 por que si hay un vector de 5 elementos solo llegara hasta 4
+  int numeros[6] = {4, 5, 6, 7, 8, 5};
+  int multiplicacion = 1;//No la incializamos en 0 por que nos daria como resultado 0
+  for (int i = 0; i < 6; i++)
   {
-    suma += numero[i];
+    multiplicacion *= numeros[i];
   }
-  cout << "La suma de los elementos son: " << suma << endl;
+  cout << "El resultado de la multiplicacion acumulada de los elementos es: " << multiplicacion << endl;
   getch();
   return 0;
 }
