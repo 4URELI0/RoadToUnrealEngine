@@ -1,4 +1,5 @@
-/*Desarrolle un programa que lea la entrada estandar un vector de enteros y saber el mayor elemento de vector*/
+/*Escribe un programa que defina un vector de numero en el vector y calcule si exite algun numeroen el vector cuyo
+valor equivale a la suma del resto de numeros del vector*/
 #include <iostream>
 // #include <stdlib.h>
 // #include <time.h>
@@ -9,25 +10,25 @@ using namespace std;
 
 int main()
 {
-  int numberInt[100], n, biggerNumber = 0; // n es para guardar el numero de elementos del arreglo
+  int numberInt[100], n, sumaArreglo = 0, i; // n es para guardar el numero de elementos del arreglo
   cout << "Digite el numero de elemento en el arreglo: ";
   cin >> n;
-  for (int i = 0; i < n; i++)
+  for (i = 0; i < n; i++)
   {
     cout << i + 1 << ". Digite un numero: ";
     cin >> numberInt[i];
-    // 1 2 4 10 5
-    if (numberInt[i] > biggerNumber)
+    sumaArreglo += numberInt[i];
+  }
+  /*Recorremos otra vez el arreglo pero ya con los valores ingresado del usuario*/
+  for (int i = 0; i < n; i++)
+  {
+    cout << numberInt[i] << " ";
+    /*Preguntamos en cada posicion del arreglo si es igual a la suma de los elementos del arreglo*/
+    if (numberInt[i] == sumaArreglo)
     {
-      biggerNumber = numberInt[i]; // 1 es mayor que 0? si, entonces se le asigna el valor a biggerNumber,
-                                   // 2 es mayor que 1? si, entonces se le asigna el valor a biggerNumber,
-                                   // 4 mayor que 2? si, entonces se le asigna el valor a biggerNumber
-                                   // 10 es mayor que 4? si, entonces se le asigna el valor a biggerNumber
-                                   // biggerNumber = 10
-                                   // 5 es mayor que 10? no, entonces el numero 10 queda dentro del elemento
+      cout << "\n La suma de los elementos es: " << sumaArreglo << " y es ese valor esta en la posicion: " << i << " del arreglo";
     }
   }
-  cout << "\n El mayor elemento del arreglo es: " << biggerNumber << endl;
   getch();
   return 0;
 }
