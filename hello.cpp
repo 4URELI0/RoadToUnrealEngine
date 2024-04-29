@@ -1,6 +1,5 @@
-/*Realiza un programa que defina dos vectores de caracteres y despues almacene el contenido de ambos vectores
-en un nuevo vector, situando en primer lugar los elemenos del primer vector seguido del segundo vector.
-Muestre el contenido del nuevo vector en la salida estandar*/
+/*Hacer un programa que lea 5 numeros en un arreglo, los copie a otro arreglo multiplicado por 2 y muestre el
+segundo arreglo*/
 #include <iostream>
 // #include <stdlib.h>
 // #include <time.h>
@@ -11,26 +10,15 @@ using namespace std;
 
 int main()
 {
-  char letras1[] = {'a', 'b', 'c', 'd', 'e'};
-  char letras2[] = {'f', 'g', 'h', 'i', 'j'};
-  char letras3[10];
-
-  /*Copiando los elementos del arreglo letras1 a letras 3*/
+  int numero[5] = {2, 3, 5, 7, 9};
+  int numeroMultiplicado2[5];
   for (int i = 0; i < 5; i++)
   {
-    letras3[i] = letras1[i];
+    numeroMultiplicado2[i] = numero[i] * 2;
   }
-  /*Copiando los elementos del arreglo letras2 a letras3*/
-  for (int i = 5; i < 10; i++)
+  for (int i = 0; i < 5; i++)
   {
-    letras3[i] = letras2[i - 5];//Le pondremos el i-5 para que elimine los elementos basura de 5 elementos en el arreglo
-                                //para que me vaya copiando los elementos de letras2
+    cout << numero[i] << "x2"<< " --> " << numeroMultiplicado2[i] << endl;
   }
-  /*Mostrar el nuevo vector*/
-  for (int i = 0; i < 10; i++)
-  {
-    cout << letras3[i] << endl;
-  }
-  getch();
   return 0;
 }
