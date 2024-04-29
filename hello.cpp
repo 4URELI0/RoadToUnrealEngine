@@ -1,5 +1,6 @@
-/*Escribe un programa que defina un vector de numero en el vector y calcule si exite algun numeroen el vector cuyo
-valor equivale a la suma del resto de numeros del vector*/
+/*Realiza un programa que defina dos vectores de caracteres y despues almacene el contenido de ambos vectores
+en un nuevo vector, situando en primer lugar los elemenos del primer vector seguido del segundo vector.
+Muestre el contenido del nuevo vector en la salida estandar*/
 #include <iostream>
 // #include <stdlib.h>
 // #include <time.h>
@@ -10,24 +11,25 @@ using namespace std;
 
 int main()
 {
-  int numberInt[100], n, sumaArreglo = 0, i; // n es para guardar el numero de elementos del arreglo
-  cout << "Digite el numero de elemento en el arreglo: ";
-  cin >> n;
-  for (i = 0; i < n; i++)
+  char letras1[] = {'a', 'b', 'c', 'd', 'e'};
+  char letras2[] = {'f', 'g', 'h', 'i', 'j'};
+  char letras3[10];
+
+  /*Copiando los elementos del arreglo letras1 a letras 3*/
+  for (int i = 0; i < 5; i++)
   {
-    cout << i + 1 << ". Digite un numero: ";
-    cin >> numberInt[i];
-    sumaArreglo += numberInt[i];
+    letras3[i] = letras1[i];
   }
-  /*Recorremos otra vez el arreglo pero ya con los valores ingresado del usuario*/
-  for (int i = 0; i < n; i++)
+  /*Copiando los elementos del arreglo letras2 a letras3*/
+  for (int i = 5; i < 10; i++)
   {
-    cout << numberInt[i] << " ";
-    /*Preguntamos en cada posicion del arreglo si es igual a la suma de los elementos del arreglo*/
-    if (numberInt[i] == sumaArreglo)
-    {
-      cout << "\n La suma de los elementos es: " << sumaArreglo << " y es ese valor esta en la posicion: " << i << " del arreglo";
-    }
+    letras3[i] = letras2[i - 5];//Le pondremos el i-5 para que elimine los elementos basura de 5 elementos en el arreglo
+                                //para que me vaya copiando los elementos de letras2
+  }
+  /*Mostrar el nuevo vector*/
+  for (int i = 0; i < 10; i++)
+  {
+    cout << letras3[i] << endl;
   }
   getch();
   return 0;
