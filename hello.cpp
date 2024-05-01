@@ -1,7 +1,6 @@
-/*Hacer un programa que lea 5 numeros en un arreglo, los copie a otro arreglo multiplicado por 2 y muestre el
-segundo arreglo*/
+/*Realiza un programa que defina una matriz de 3*3 y escriba un ciclo para que muestre a diagonal principal de la matriz*/
 #include <iostream>
-#include <stdlib.h>
+// #include <stdlib.h>
 // #include <time.h>
 #include <conio.h>
 // #include <math.h>
@@ -10,23 +9,27 @@ using namespace std;
 
 int main()
 {
-  int numeroRandom = 0;//Guardara el valor del numero aleatorio
-  int numero[5];
-  int numeroMultiplicado2[5];
-  for (int i = 0; i < 5; i++)
+  int numeros[100][100], filas = 3, columnas = 3;
+  /*Almacenando elementos en la matriz*/
+  for (int i = 0; i < filas; i++)
   {
-    numeroRandom = 1 + rand() % 50;//Generar el valor aleatorio
-    numero[i] = numeroRandom;//En cada posicion del arreglo guardaremos el valor del numero aleatorio que salio por ejemplo en la posicion 0 puede estar un 34
-    cout << numero[i] << " ";
+    for (int j = 0; j < columnas; j++)
+    {
+      cout << "Digite un numero: [" << i << "][" << j << "]: ";
+      cin >> numeros[i][j];
+    }
   }
-  cout << endl;
-  for (int i = 0; i < 5; i++)
+  /*Mostrando la matriz*/
+  for (int i = 0; i < filas; i++)
   {
-    numeroMultiplicado2[i] = numero[i] * 2;//Multiplicamos *2 al valor aleatorio que contiene el arreglo y lo guardamos en otro arreglo
+    for (int j = 0; j < columnas; j++)
+    {
+      cout << numeros[i][j];
+    }
+    cout << "\n";
   }
-  for (int i = 0; i < 5; i++)
-  {
-    cout << numero[i] << "x2"<< " = " << numeroMultiplicado2[i] << endl;
-  }
+  /*Mostrar la diagonal de la matriz principal*/
+  
+  getch();
   return 0;
 }
