@@ -1,4 +1,5 @@
-/*Realiza un programa que defina una matriz de 3*3 y escriba un ciclo para que muestre a diagonal principal de la matriz*/
+/*Hacer una matriz de tipo entera de 2*2, Llenarla de numeros y luego copiar todo su contenido
+hacia otra matriz*/
 #include <iostream>
 // #include <stdlib.h>
 // #include <time.h>
@@ -7,29 +8,27 @@
 // #include <algorithm>
 using namespace std;
 
-int main()
+int main(int argc, char const *argv[])
 {
-  int numeros[100][100], filas = 3, columnas = 3;
-  /*Almacenando elementos en la matriz*/
-  for (int i = 0; i < filas; i++)
+  int numeros[2][2] = {{1, 2}, {3, 4}};
+  int matriz2[2][2];
+  // Pasando el contenido de numeros a matriz2
+  for (int i = 0; i < 2; i++)
   {
-    for (int j = 0; j < columnas; j++)
+    for (int j = 0; j < 2; j++)
     {
-      cout << "Digite un numero: [" << i << "][" << j << "]: ";
-      cin >> numeros[i][j];
+      matriz2[i][j] = numeros[i][j];
     }
   }
-  /*Mostrando la matriz*/
-  for (int i = 0; i < filas; i++)
+  // Mostrando matriz2
+  for (int i = 0; i < 2; i++)
   {
-    for (int j = 0; j < columnas; j++)
+    for (int j = 0; j < 2; j++)
     {
-      cout << numeros[i][j];
+      cout << matriz2[i][j];
     }
     cout << "\n";
   }
-  /*Mostrar la diagonal de la matriz principal*/
-  
   getch();
   return 0;
 }
