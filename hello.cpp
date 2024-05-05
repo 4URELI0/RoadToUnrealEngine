@@ -1,34 +1,47 @@
-/*Hacer una matriz de tipo entera de 2*2, Llenarla de numeros y luego copiar todo su contenido
-hacia otra matriz*/
+/*Hacer una matriz preguntando al usuario el numeros de filas y columnas, llenarlas de numeros
+aleatorio, copiar el contenido a otra matriz y por ultimo mostrarla en la consola*/
 #include <iostream>
 // #include <stdlib.h>
 // #include <time.h>
+#include <ctime>
 #include <conio.h>
 // #include <math.h>
 // #include <algorithm>
 using namespace std;
 
-int main(int argc, char const *argv[])
+int main()
 {
-  int numeros[2][2] = {{1, 2}, {3, 4}};
-  int matriz2[2][2];
-  // Pasando el contenido de numeros a matriz2
-  for (int i = 0; i < 2; i++)
+  /*Pedirle al usuario al usuario cuanta filas y columnas quiere*/
+  int numeros[10][10], numeros2[10][10], filas, columnas;
+  cout << "Digite el numeros de filas entre el 1 a 10: ";
+  cin >> filas;
+  cout << "Digite la cantidad de columnas entre el 1 a 10: ";
+  cin >> columnas;
+
+  /*Almacenando elementos en la matriz*/
+  for (int i = 0; i < filas; i++)
   {
-    for (int j = 0; j < 2; j++)
+    for (int j = 0; j < columnas; j++)
     {
-      matriz2[i][j] = numeros[i][j];
+      numeros[i][j] = (rand() % 9) + 1;
     }
   }
-  // Mostrando matriz2
-  for (int i = 0; i < 2; i++)
+  /*Pasar la matriz numero a  numero2*/
+  for (int i = 0; i < filas; i++)
   {
-    for (int j = 0; j < 2; j++)
+    for (int j = 0; j < columnas; j++)
     {
-      cout << matriz2[i][j];
+      numeros2[i][j] = numeros[i][j];
+    }
+  }
+  /*Mostrando la matriz2*/
+  for (int i = 0; i < filas; i++)
+  {
+    for (int j = 0; j < columnas; j++)
+    {
+      cout << "|" << numeros2[i][j] << "|";
     }
     cout << "\n";
   }
-  getch();
   return 0;
 }
