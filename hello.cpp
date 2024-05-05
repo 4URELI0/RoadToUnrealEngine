@@ -1,5 +1,5 @@
-/*Hacer una matriz preguntando al usuario el numeros de filas y columnas, llenarlas de numeros
-aleatorio, copiar el contenido a otra matriz y por ultimo mostrarla en la consola*/
+/*Realize un programa que lea una matriz de 3 * 3 y cree una matriz transpuesta. La matriz transpuesta es aquello en la
+columna i era la fila i de la matriz original*/
 #include <iostream>
 // #include <stdlib.h>
 // #include <time.h>
@@ -9,37 +9,34 @@ aleatorio, copiar el contenido a otra matriz y por ultimo mostrarla en la consol
 // #include <algorithm>
 using namespace std;
 
-int main()
+int main(int argc, char const *argv[])
 {
-  /*Pedirle al usuario al usuario cuanta filas y columnas quiere*/
-  int numeros[10][10], numeros2[10][10], filas, columnas;
-  cout << "Digite el numeros de filas entre el 1 a 10: ";
-  cin >> filas;
-  cout << "Digite la cantidad de columnas entre el 1 a 10: ";
-  cin >> columnas;
+  int numeros[3][3];
+  for (int i = 0; i < 3; i++)
+  {
+    for (int j = 0; j < 3; j++)
+    {
+      cout << "Escribe un numero [" << i << "][" << j << "]: ";
+      cin >> numeros[i][j];
+    }
+  }
 
-  /*Almacenando elementos en la matriz*/
-  for (int i = 0; i < filas; i++)
+  cout << "\nMatriz original\n";
+  for (int i = 0; i < 3; i++)
   {
-    for (int j = 0; j < columnas; j++)
+    for (int j = 0; j < 3; j++)
     {
-      numeros[i][j] = (rand() % 9) + 1;
+      cout << numeros[i][j] << " ";
     }
+    cout << "\n";
   }
-  /*Pasar la matriz numero a  numero2*/
-  for (int i = 0; i < filas; i++)
+  /*Matriz en forma transpuesta*/
+  cout << "\nMatriz transpuesta\n";
+  for (int i = 0; i < 3; i++)
   {
-    for (int j = 0; j < columnas; j++)
+    for (int j = 0; j < 3; j++)
     {
-      numeros2[i][j] = numeros[i][j];
-    }
-  }
-  /*Mostrando la matriz2*/
-  for (int i = 0; i < filas; i++)
-  {
-    for (int j = 0; j < columnas; j++)
-    {
-      cout << "|" << numeros2[i][j] << "|";
+      cout << numeros[j][i] << " "; // Donde iba las filas ahora van las columnas y donde iban las columnas ahora van las filas
     }
     cout << "\n";
   }
