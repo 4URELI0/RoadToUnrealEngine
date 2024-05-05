@@ -1,5 +1,4 @@
-/*Realize un programa que lea una matriz de 3 * 3 y cree una matriz transpuesta. La matriz transpuesta es aquello en la
-columna i era la fila i de la matriz original*/
+/*Realize un programa que calcule la suma de dos matrices de 3*3*/
 #include <iostream>
 // #include <stdlib.h>
 // #include <time.h>
@@ -11,32 +10,40 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-  int numeros[3][3];
+  int numeros1[3][3], numero2[3][3], sumaMatriz[3][3];
+  cout << "Matriz 1 \n";
   for (int i = 0; i < 3; i++)
   {
     for (int j = 0; j < 3; j++)
     {
-      cout << "Escribe un numero [" << i << "][" << j << "]: ";
-      cin >> numeros[i][j];
+      cout << "[" << i << "][" << j << "]: ";
+      cin >> numeros1[i][j];
     }
   }
-
-  cout << "\nMatriz original\n";
+  cout << "Matriz 2 \n";
   for (int i = 0; i < 3; i++)
   {
     for (int j = 0; j < 3; j++)
     {
-      cout << numeros[i][j] << " ";
+      cout << "[" << i << "][" << j << "]: ";
+      cin >> numero2[i][j];
     }
-    cout << "\n";
   }
-  /*Matriz en forma transpuesta*/
-  cout << "\nMatriz transpuesta\n";
+  /*Suma de matriz*/
   for (int i = 0; i < 3; i++)
   {
     for (int j = 0; j < 3; j++)
     {
-      cout << numeros[j][i] << " "; // Donde iba las filas ahora van las columnas y donde iban las columnas ahora van las filas
+      sumaMatriz[i][j] = numeros1[i][j] + numero2[i][j];
+    }
+  }
+  cout << "Resultado de la suma de matrices\n";
+  /*Mostrar a la matriz sumada*/
+  for (int i = 0; i < 3; i++)
+  {
+    for (int j = 0; j < 3; j++)
+    {
+      cout << "|" << sumaMatriz[i][j] << "|";
     }
     cout << "\n";
   }
