@@ -27,7 +27,7 @@ int main(int argc, char const *argv[])
   {
     cout << "*------------------------------*\n";
     cout << "BIENVENIDO AL BANCO DE MESSI\n";
-    cout << "Hola " << nombre << apellido << " \n";
+    cout << "Hola " << nombre <<" "<< apellido << " \n";
     cout << "Elija una opcion por favor \n";
     cout << "*------------------------------*\n";
     cout << "1. Mostrar saldo\n";
