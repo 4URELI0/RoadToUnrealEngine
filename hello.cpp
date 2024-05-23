@@ -23,13 +23,15 @@ int main(int argc, char const *argv[])
   cin >> nombre;
   cout << "Apellido: " << apellido;
   cin >> apellido;
+  
+  cout << "*------------------------------*\n";
+  cout << "BIENVENIDO AL BANCO DE MESSI\n";
+  cout << "Hola " << nombre << " " << apellido << " \n";
+  cout << "Elija una opcion por favor \n";
+  cout << "*------------------------------*\n";
+  
   do
   {
-    cout << "*------------------------------*\n";
-    cout << "BIENVENIDO AL BANCO DE MESSI\n";
-    cout << "Hola " << nombre <<" "<< apellido << " \n";
-    cout << "Elija una opcion por favor \n";
-    cout << "*------------------------------*\n";
     cout << "1. Mostrar saldo\n";
     cout << "2. Depositar dinero\n";
     cout << "3. Retirar dinero\n";
