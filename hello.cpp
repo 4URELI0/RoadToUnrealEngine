@@ -1,47 +1,52 @@
-/*Desarrollar un programa que determine si una matriz es simetrica o no, Una matriz es simetrica si es
-cuadrada y si es igual a su matriz transparente*/
+/*Realice un programa que calcule el producto de dos matrices cuadrada de 3 x 3 */
 #include <iostream>
 #include <conio.h>
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
-  int numeros[100][100], filas, columnas;
-  char bandera = 'F';
-  cout << "Escribe el numero de filas: ";
-  cin >> filas;
-  cout << "Escribe el numero de columas: ";
-  cin >> columnas;
+  int matriz1[3][3], matriz2[3][3], productoMatriz[3][3];
 
-  for (int i = 0; i < filas; i++)
+  cout << "Matriz 1 \n";
+  for (int i = 0; i < 3; i++)
   {
-    for (int j = 0; j < columnas; j++)
+    for (int j = 0; j < 3; j++)
     {
-      cout << "Escribe un numero: [" << i << "]" << "[" << j << "]";
-      cin >> numeros[i][j];
+      cout << "[" << i << "]" << "[" << j << "]: ";
+      cin >> matriz1[i][j];
     }
   }
 
-  if (filas == columnas)
+  cout << "Matriz 2 \n";
+  for (int i = 0; i < 3; i++)
   {
-    for (int i = 0; i < filas; i++)
+    for (int j = 0; j < 3; j++)
     {
-      for (int j = 0; j < columnas; j++)
+      cout << "[" << i << "]" << "[" << j << "]: ";
+      cin >> matriz2[i][j];
+    }
+  }
+
+  /*Producto de matrices*/
+  for (int i = 0; i < 3; i++)
+  {
+    for (int j = 0; j < 3; j++)
+    {
+      productoMatriz[i][j] = 0;
+      for (int k = 0; k < 3; k++)
       {
-        if (numeros[i][j] == numeros[j][i])
-        {
-          bandera = 'V';
-        }
+        productoMatriz[i][j] += matriz1[i][k] * matriz2[k][j];
       }
     }
   }
-  if (bandera == 'V')
+  /*Resultado*/
+  for (int i = 0; i < 3; i++)
   {
-    cout << "La matriz es simetrica";
-  }
-  else
-  {
-    cout << "La matriz no es simetrica";
+    for (int j = 0; j < 3; j++)
+    {
+      cout << "|" << productoMatriz[i][j] << "|";
+    }
+    cout << "\n";
   }
   return 0;
 }
