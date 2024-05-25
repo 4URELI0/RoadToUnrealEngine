@@ -1,101 +1,47 @@
+/*Desarrollar un programa que determine si una matriz es simetrica o no, Una matriz es simetrica si es
+cuadrada y si es igual a su matriz transparente*/
 #include <iostream>
-// #include <stdlib.h>
-// #include <time.h>
-#include <ctime>
 #include <conio.h>
-// #include <math.h>
-// #include <algorithm>
-#include <iomanip>
 using namespace std;
-
-void mostrarSaldo(double saldo);
-double deposito();
-double retirar(double saldo);
 
 int main(int argc, char const *argv[])
 {
-  double saldo = 0;
-  short int opciones = 0;
-  string nombre;
-  string apellido;
+  int numeros[100][100], filas, columnas;
+  char bandera = 'F';
+  cout << "Escribe el numero de filas: ";
+  cin >> filas;
+  cout << "Escribe el numero de columas: ";
+  cin >> columnas;
 
-  cout << "Nombre: " << nombre;
-  cin >> nombre;
-  cout << "Apellido: " << apellido;
-  cin >> apellido;
-  
-  cout << "*------------------------------*\n";
-  cout << "BIENVENIDO AL BANCO DE MESSI\n";
-  cout << "Hola " << nombre << " " << apellido << " \n";
-  cout << "Elija una opcion por favor \n";
-  cout << "*------------------------------*\n";
-  
-  do
+  for (int i = 0; i < filas; i++)
   {
-    cout << "1. Mostrar saldo\n";
-    cout << "2. Depositar dinero\n";
-    cout << "3. Retirar dinero\n";
-    cout << "4. Salir del banco\n";
-    cin >> opciones;
-
-    switch (opciones)
+    for (int j = 0; j < columnas; j++)
     {
-    case 1:
-      mostrarSaldo(saldo);
-      break;
-    case 2:
-      saldo += deposito();
-      mostrarSaldo(saldo);
-      break;
-    case 3:
-      saldo -= retirar(saldo);
-      break;
-    case 4:
-      cout << "Gracias por confiar en nosotros\n";
-      break;
-    default:
-      cout << "Por favor elija una opcion dentro del rango 1-4\n";
-      break;
+      cout << "Escribe un numero: [" << i << "]" << "[" << j << "]";
+      cin >> numeros[i][j];
     }
-  } while (opciones != 4);
-  return 0;
-}
-void mostrarSaldo(double saldo)
-{
-  cout << "Su saldo es: $" << setprecision(2) << fixed << saldo << "\n";
-}
-double deposito()
-{
-  double monto = 0;
+  }
 
-  cout << "Cual es el monto que quiere depositar en su cuenta?\n $";
-  cin >> monto;
-  if (monto > 0)
+  if (filas == columnas)
   {
-    return monto;
+    for (int i = 0; i < filas; i++)
+    {
+      for (int j = 0; j < columnas; j++)
+      {
+        if (numeros[i][j] == numeros[j][i])
+        {
+          bandera = 'V';
+        }
+      }
+    }
+  }
+  if (bandera == 'V')
+  {
+    cout << "La matriz es simetrica";
   }
   else
   {
-    return 0;
+    cout << "La matriz no es simetrica";
   }
-}
-double retirar(double saldo)
-{
-  double monto = 0;
-  cout << "Por favor ingrese cuanto dinero desea retirar: \n$";
-  cin >> monto;
-  if (monto > saldo)
-  {
-    cout << "Fondo insuficiente\n";
-    return 0;
-  }
-  else if (monto < 0)
-  {
-    cout << "Por favor ingresa una cantidad valida\n";
-    return 0;
-  }
-  else
-  {
-    return monto;
-  }
+  return 0;
 }
