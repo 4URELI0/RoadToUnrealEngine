@@ -1,6 +1,4 @@
-/*Hacer un programa que pida al usuario que digite una cadena de caracteres, luego verificar la
-longitud de la cadena, y si esta supera los 10 caracteres mostrarla en pantalla, caso contrario
-no mostrarla*/
+/*Copiar el contenido de una cadena a otra - Funcion stcpy()*/
 #include <iostream>
 #include <conio.h>
 #include <string.h>
@@ -8,22 +6,13 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-  char palabra[30];
-  int longitud = 0; // Guardamos el valor que nos va a dar strLen
+  char nombre[] = "Cristian";
+  char nombre2[20];
 
-  cout << "Por favor escribe una cadena de caracteres: ";
-  cin.getline(palabra, 30);
-  longitud = strlen(palabra);
+  // Copiamos los valores de la cadena con elementos a la cadena vacia
+  strcpy(nombre2, nombre);
 
-  if (longitud > 10)
-  {
-    cout << "La palabra es: " << palabra << endl;
-    cout << "La longitud es: " << longitud;
-  }
-  else
-  {
-    cout << "Es menor que el valor de 10";
-  }
-  getch();
+  cout << nombre2 << endl;
+
   return 0;
 }
