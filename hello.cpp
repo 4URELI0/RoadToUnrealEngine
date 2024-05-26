@@ -1,4 +1,4 @@
-/*Cadena de caracteres*/
+/*Longitud de una cadena de caracteres - Funcion strLen()*/
 #include <iostream>
 #include <conio.h>
 #include <string.h>
@@ -6,17 +6,10 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-  char nombre[20];
-
-  cout << "Escribe tu nombre: ";
-  /*Son 3 parametros que va a recibir el cin.getLine*/
-  //Se le va a indicar el nombre donde se va a guardar
-  //Le indicamos cuantos espacio va a ocupar
-  //Y se va a terminar cuando le indiquemos un salto de linea
-  cin.getline(nombre, 20, '\n');
-
-  cout << nombre << endl;
-
+  char palabra[] = "hola como estas?";
+  int longitud = 0; // Guardamos el valor que nos va a dar strLen
+  longitud = strlen(palabra);
+  cout << "Numeros de elementos de la cadena es: " << longitud << endl;
   getch();
   return 0;
 }
