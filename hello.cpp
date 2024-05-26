@@ -1,20 +1,19 @@
-/*Pedir al usuario una cadena de la caracteres, almacenarla en un arreglo
-y copiar todo su contenido hacia otro arreglo de caracteres*/
+/*Comparar cadenas - Funcion strcmp()*/
 #include <iostream>
 #include <conio.h>
 #include <string.h>
 using namespace std;
 
+//avion - becerro
+
 int main(int argc, char const *argv[])
 {
-  char nombreUsuario[30];
-  char copiaNombre[30];
+  char palabra1[] = "becerro";
+  char palabra2[] = "avion";
 
-  cout << "Por favor escribe tu nombre: ";
-  cin.getline(nombreUsuario, 30);
-
-  // Copiamos los valores de la cadena con elementos a la cadena vacia
-  strcpy(copiaNombre, nombreUsuario);
-  cout << "Se realizo una copia de tu nombre en otro arreglo: " << copiaNombre;
+  if (strcmp(palabra1, palabra2) > 0)
+  {
+    cout << palabra1 << " Esta alfabeticamente";
+  }
   return 0;
 }
