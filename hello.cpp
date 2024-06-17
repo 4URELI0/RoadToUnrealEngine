@@ -3,10 +3,18 @@ using namespace std;
 
 int main()
 {
-    long long n, suma;
+    // definicion de un vector estatico
+    // tipo-dato nombre-vector[tamanio]
+    int n;
     cin >> n;
-
-    suma = (n * (n + 1)) / 2;
-
-    cout << suma;
+    int ve[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> ve[i];
+    }
+    cout << endl;
+    for (int i = 0; i < n; i++)
+    {
+        cout << ve[i] << " ";
+    }
 }
