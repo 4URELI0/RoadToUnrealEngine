@@ -1,35 +1,36 @@
+/*Ejemplo: realizar un programa en c++ que permita sumar n valores ingresados por
+El usuario. Despues, mostrar los valores en el orden inverso en el que fueron ingresados.
+n también es ingresado por el usuario.*/
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
-    // definicion de un vector dinamico
-    /*Formas de definir el vector dinamico*/
-    // 1- vector<tipo-dato> nombre Vector - sin tamanio
-    // 2- vector<tipo-dato> nombre- Vector(tamanio) - vector indicando su tamanio, se puede agregar mas si es que lo necesito
-    // 3- vector<tipo-dato> nombre-Vector(tamanio, valorInicial)- le indicamos su tamanio y por defecto que todas las celdas tengan por defecto x valor
-    int n;
+    int n, suma;
+    cout << "Ingrese el tamanio del arreglo: " << endl;
     cin >> n;
-    vector<int> v(n);
+    int vector1[n];
+    
+    cout << "Ingrese los valores: " << endl;
     for (int i = 0; i < n; i++)
     {
-        cin >> v[i];
+        cin >> vector1[i];
     }
-    cout << endl;
+
+    /*Sumar los valores ingresado*/
     for (int i = 0; i < n; i++)
     {
-        cout << "[" << v[i] << "]";
+        suma += vector1[i];
     }
-
-    cout << endl << "Agregados" << endl;
-    int nuevoValor;
-    cin >> nuevoValor;
-    v.push_back(nuevoValor);
-    cout << endl;
-
-    for (int i = 0; i < v.size(); i++)//el size nos mostrara el tamanio real del vector
+    cout << "Resultado de la suma: " << suma << endl;
+    
+    /*Invertir los valores ingresados por el usuario*/
+    cout << "Valores inversos: " << endl;
+    for (int i = n - 1; i >= 0; i--)
     {
-        cout << "[" << v[i] << "]";
+        cout << vector1[i] << endl;
     }
+
+    return 0;
 }
